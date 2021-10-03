@@ -1,4 +1,3 @@
-
 import subprocess
 import os
 
@@ -8,37 +7,37 @@ state = 0
 
 def printHeader():
     os.system('clear')
-    print 'S N A K E\n'
+    print ('S N A K E\n')
 
 def tutorial():
     global state
 
     if state == 0:
         printHeader()
-        print '\nHi there! Welcome to Snake.'
-        print 'Type snake to launch the game'
+        print ('\nHi there! Welcome to Snake.')
+        print ('Type snake to launch the game')
         success = False
         while not success:
             command = raw_input()
             if command == 'snake':
-                print '\nUse the keys to move and Q to quit'
+                print ('\nUse the keys to move and Q to quit')
                 subprocess.call("sleep 1", shell=True)
-                print '3...'
+                print ('3...')
                 subprocess.call("sleep 1", shell=True)
-                print '2...'
+                print ('2...')
                 subprocess.call("sleep 1", shell=True)
-                print '1...'
+                print ('1...')
                 subprocess.call("sleep 1", shell=True)
                 subprocess.call("python __main__.py", shell=True)
                 success = True
                 state += 1
             else:
-                print 'Type snake to launch the game'
+                print ('Type snake to launch the game')
 
     elif state == 1:
         printHeader()
-        print 'Great game. Now let\'s see what options are available.'
-        print 'Type snake --help'
+        print( 'Great game. Now let\'s see what options are available.')
+        print ('Type snake --help')
         success = False
         while not success:
             command = raw_input()
@@ -48,12 +47,12 @@ def tutorial():
                 success = True
                 state += 1
             else:
-                print 'Type snake --help'
+                print ('Type snake --help')
 
     elif state == 2:
-        print '\n\nYou can try different themes for the game'
-        print 'For example, type snake --theme minimal'
-        print 'Or type snake --help to get a list of available themes and then snake --theme "name"'
+        print ('\n\nYou can try different themes for the game')
+        print ('For example, type snake --theme minimal')
+        print ('Or type snake --help to get a list of available themes and then snake --theme "name"')
         success = False
         while not success:
             command = raw_input()
@@ -69,7 +68,7 @@ def tutorial():
             elif command == 'snake --help' or command == 'snake -h':
                 success = False
             else:
-                print 'Try typying snake --theme minimal'
+                print ('Try typying snake --theme minimal')
 
 def run():
     try:
